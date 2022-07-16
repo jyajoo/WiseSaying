@@ -1,3 +1,5 @@
+import Controller.WiseSayingController;
+
 import java.util.Scanner;
 
     /*
@@ -6,9 +8,11 @@ import java.util.Scanner;
 public class App {
 
     private final Scanner sc;
+    private final WiseSayingController wiseSayingController;
 
     public App(Scanner sc) {
         this.sc = sc;
+        wiseSayingController = new WiseSayingController(sc);
     }
 
     public void run() {
@@ -19,6 +23,9 @@ public class App {
             System.out.print("명령 ) ");
 
             switch(sc.nextLine().trim()){
+                case "등록":
+                    wiseSayingController.save();
+                    break;
                 case "종료":
                     break outer;
             }
