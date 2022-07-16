@@ -1,5 +1,8 @@
 package domain;
 
+/*
+스스로 구현해보기
+ */
 public class WiseSaying {
 
     public int id;

@@ -2,9 +2,9 @@ import Controller.WiseSayingController;
 
 import java.util.Scanner;
 
-    /*
-    스스로 구현해보기
-     */
+/*
+스스로 구현해보기
+ */
 public class App {
 
     private final Scanner sc;
@@ -25,6 +25,9 @@ public class App {
             switch(sc.nextLine().trim()){
                 case "등록":
                     wiseSayingController.save();
+                    break;
+                case "목록":
+                    wiseSayingController.findAll();
                     break;
                 case "종료":
                     break outer;

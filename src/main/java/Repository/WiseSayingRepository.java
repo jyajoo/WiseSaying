@@ -18,4 +18,8 @@ public class WiseSayingRepository {
         wiseSayingList.add(wiseSaying);
         return wiseSaying.id;
     }
+
+    public List<WiseSaying> findAll() {
+        return wiseSayingList;
+    }
 }
