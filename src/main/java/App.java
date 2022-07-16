@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class App {
     /*
-    참고, 복붙 금지
+    스스로 구현해보기
      */
 
     public static void run() {
