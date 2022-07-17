@@ -1,8 +1,3 @@
-package Controller;
-
-import Service.WiseSayingService;
-import domain.WiseSaying;
-
 import java.util.List;
 import java.util.Scanner;
 
@@ -36,5 +31,25 @@ public class WiseSayingController {
             WiseSaying wiseSaying = wiseSayingList.get(i);
             System.out.printf("%d / %s / %s\n", wiseSaying.id, wiseSaying.author, wiseSaying.content);
         }
+    }
+
+    public void remove(Rq rq) {
+        WiseSaying wiseSaying = getWiseSaying(rq);
+        if (wiseSaying == null) {
+            return;
+        }
+        wiseSayingService.remove(wiseSaying);
+        System.out.printf("%d번 명언이 삭제되었습니다.\n", wiseSaying.id);
+    }
+
+    private WiseSaying getWiseSaying(Rq rq) {
+        int id = rq.getIntParam("id", 0);
+        WiseSaying wiseSaying = wiseSayingService.findById(id);
+
+        if (wiseSaying == null) {
+            System.out.printf("%d번 명언은 존재하지 않습니다.\n", id);
+            return null;
+        }
+        return wiseSaying;
     }
 }

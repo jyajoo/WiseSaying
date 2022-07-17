@@ -1,5 +1,3 @@
-import Controller.WiseSayingController;
-
 import java.util.Scanner;
 
 /*
@@ -22,12 +20,18 @@ public class App {
         while(true){
             System.out.print("명령 ) ");
 
-            switch(sc.nextLine().trim()){
+            String cmd = sc.nextLine().trim();
+            Rq rq = new Rq(cmd);
+
+            switch(rq.getPath()){
                 case "등록":
                     wiseSayingController.save();
                     break;
                 case "목록":
                     wiseSayingController.findAll();
+                    break;
+                case "삭제":
+                    wiseSayingController.remove(rq);
                     break;
                 case "종료":
                     break outer;

@@ -1,7 +1,3 @@
-package Repository;
-
-import domain.WiseSaying;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,5 +17,18 @@ public class WiseSayingRepository {
 
     public List<WiseSaying> findAll() {
         return wiseSayingList;
+    }
+
+    public WiseSaying findById(int id) {
+        for (WiseSaying wiseSaying : wiseSayingList) {
+            if (wiseSaying.id == id) {
+                return wiseSaying;
+            }
+        }
+        return null;
+    }
+
+    public boolean remove(WiseSaying wiseSaying) {
+        return wiseSayingList.remove(wiseSaying);
     }
 }

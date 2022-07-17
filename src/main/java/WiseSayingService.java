@@ -1,8 +1,3 @@
-package Service;
-
-import Repository.WiseSayingRepository;
-import domain.WiseSaying;
-
 import java.util.List;
 
 /*
@@ -18,5 +13,13 @@ public class WiseSayingService {
 
     public List<WiseSaying> findAll() {
         return wiseSayingRepository.findAll();
+    }
+
+    public WiseSaying findById(int id) {
+        return wiseSayingRepository.findById(id);
+    }
+
+    public boolean remove(WiseSaying wiseSaying) {
+        return wiseSayingRepository.remove(wiseSaying);
     }
 }
