@@ -52,4 +52,19 @@ public class WiseSayingController {
         }
         return wiseSaying;
     }
+
+    public void modify(Rq rq) {
+        WiseSaying wiseSaying = getWiseSaying(rq);
+
+        if (wiseSaying == null) {
+            return;
+        }
+        System.out.print("명언 ) ");
+        String content = sc.nextLine().trim();
+        System.out.print("작가 ) ");
+        String author = sc.nextLine().trim();
+
+        wiseSayingService.modify(wiseSaying, content, author);
+        System.out.printf("%d번 명언이 수정되었습니다.\n", wiseSaying.id);
+    }
 }

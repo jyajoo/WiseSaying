@@ -31,4 +31,10 @@ public class WiseSayingRepository {
     public boolean remove(WiseSaying wiseSaying) {
         return wiseSayingList.remove(wiseSaying);
     }
+
+    public boolean modify(WiseSaying wiseSaying, String content, String author) {
+        wiseSaying.content = content;
+        wiseSaying.author = author;
+        return true;
+    }
 }

@@ -22,4 +22,8 @@ public class WiseSayingService {
     public boolean remove(WiseSaying wiseSaying) {
         return wiseSayingRepository.remove(wiseSaying);
     }
+
+    public boolean modify(WiseSaying wiseSaying, String content, String author) {
+        return wiseSayingRepository.modify(wiseSaying, content, author);
+    }
 }

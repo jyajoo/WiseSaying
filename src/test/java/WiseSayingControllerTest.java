@@ -71,4 +71,26 @@ class WiseSayingControllerTest {
         assertFalse(rs.contains("1 / 키케로 / 삶이 있는 한 희망은 있다."));
         assertTrue(rs.contains("1번 명언은 존재하지 않습니다."));
     }
+
+    @Test
+    void 수정_테스트() {
+        String rs = AppTestRunner.run("""
+                등록
+                삶이 있는 한 희망은 있다.
+                키케로
+                등록
+                나에게 불가능이란 없다
+                나폴레옹
+                목록
+                수정?id=0
+                수정?id=2
+                나에게 불가능이란 없다.
+                나폴레옹
+                목록
+                """);
+        assertTrue(rs.contains("2 / 나폴레옹 / 나에게 불가능이란 없다"));
+        assertTrue(rs.contains("0번 명언은 존재하지 않습니다."));
+        assertTrue(rs.contains("2번 명언이 수정되었습니다."));
+        assertTrue(rs.contains("2 / 나폴레옹 / 나에게 불가능이란 없다."));
+    }
 }
